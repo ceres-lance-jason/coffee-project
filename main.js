@@ -1,14 +1,16 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
+    var html = '<div class="coffee">';
+    // html += '<div>' + coffee.id + '</div>';
+    html += '<h1>' + coffee.name + '</h1>';
+    html += '<p>' + coffee.roast + '</p>';
+    html += '<div>';
 
     return html;
 }
+
+
 
 function renderCoffees(coffees) {
     var html = '';
@@ -27,7 +29,7 @@ function updateCoffees(e) {
             filteredCoffees.push(coffee);
         }
     });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
+    console.log(tbody.innerHTML = renderCoffees(filteredCoffees));
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -55,3 +57,14 @@ var roastSelection = document.querySelector('#roast-selection');
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+
+function coffeeChoice(coffees) {
+    coffees.forEach(function (coffee) {
+        if (coffee.name) {
+
+        }
+    });
+    return coffees;
+}
+
+coffeeChoice("Light City");
