@@ -1,7 +1,7 @@
-"use strict"
+"use strict";
 
 function renderCoffee(coffee) {
-    var html = '<div class="coffee">';
+    var html = '<div class="coffees">';
     // html += '<div>' + coffee.id + '</div>';
     html += '<h1>' + coffee.name + '</h1>';
     html += '<p>' + coffee.roast + '</p>';
@@ -9,12 +9,11 @@ function renderCoffee(coffee) {
 
     return html;
 }
-
-
+// document.getElementsByClassName(coffees).type = hidden;
 
 function renderCoffees(coffees) {
     var html = '';
-    for(var i = coffees.length - 1; i >= 0; i--) {
+    for(var i = 0; i < coffees.length; i++) {
         html += renderCoffee(coffees[i]);
     }
     return html;
@@ -23,14 +22,28 @@ function renderCoffees(coffees) {
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
-    var filteredCoffees = [];
+    // var filteredCoffees = [];
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
         }
     });
-    console.log(tbody.innerHTML = renderCoffees(filteredCoffees));
+    tbody.innerHTML = renderCoffees(filteredCoffees);
 }
+
+
+// function userCoffeeInput(e) {
+//     e.preventDefault();
+//     var coffeeName = userCoffee.value;
+//     var userCoffeeResults = [];
+//     coffees.forEach(function (coffee) {
+//         if (coffee.name.toLowerCase().includes(coffeeName.toLowerCase())) {
+//             userCoffeeResults.push(coffee);
+//         }
+//     });
+// }
+
+
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
@@ -47,7 +60,7 @@ var coffees = [
     {id: 11, name: 'Espresso', roast: 'dark'},
     {id: 12, name: 'Viennese', roast: 'dark'},
     {id: 13, name: 'Italian', roast: 'dark'},
-    {id: 14, name: 'French', roast: 'dark'},
+    {id: 14, name: 'French', roast: 'dark'}
 ];
 
 var tbody = document.querySelector('#coffees');
@@ -58,13 +71,3 @@ tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
 
-function coffeeChoice(coffees) {
-    coffees.forEach(function (coffee) {
-        if (coffee.name) {
-
-        }
-    });
-    return coffees;
-}
-
-coffeeChoice("Light City");
