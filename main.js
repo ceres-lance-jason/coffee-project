@@ -9,7 +9,8 @@ function renderCoffee(coffee) {
 
     return html;
 }
-// document.getElementsByClassName(coffees).type = hidden;
+
+
 
 function renderCoffees(coffees) {
     var html = '';
@@ -19,10 +20,11 @@ function renderCoffees(coffees) {
     return html;
 }
 
+
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
-    // var filteredCoffees = [];
+    var filteredCoffees = [];
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
@@ -30,7 +32,6 @@ function updateCoffees(e) {
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
-
 
 // function userCoffeeInput(e) {
 //     e.preventDefault();
@@ -43,6 +44,9 @@ function updateCoffees(e) {
 //     });
 // }
 
+// Add functionality to search through the coffees by name, and display only the
+// coffees that match the provided search term (You will need to add an input
+// field to the existing form for this)
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide

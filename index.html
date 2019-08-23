@@ -22,16 +22,16 @@
 <hr>
 <main>
     <div class="coffees"></div>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-sm-6 col-md-6 col-lg-6">
-                <div id="coffees"></div>
+                <div id="coffees" class="coffees"></div>
             </div>
             <div class="col-sm-6 col-md-6 col-lg-6">
                 <form class="top-form">
                     <div class="form-group">
                         <label for="roast-selection">Roast</label>
-                        <select id="roast-selection" class="select-color form-control" onchange="updateCoffees(value)">
+                        <select id="roast-selection" class="select-color form-control">
                             <option value='all' selected>all</option>
                             <option value="light">light</option>
                             <option value="medium">medium</option>
